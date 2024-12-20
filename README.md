@@ -8,24 +8,24 @@ This repository provides a Python-based pipeline for conducting systematic revie
 
 ### Step 1: Exporting Articles from Web of Science
 
-1. **Perform Initial Search**:
+**Perform Initial Search**:
    - Log into the [Web of Science Core Collection](https://www.webofscience.com/).
    - Define search terms relevant to your topic (e.g., "Industry 5.0" or "Digital Twins").
    - Apply filters for years **2020-2024** to ensure recent studies.
    - Export the results in `Tab Delimited File` format (`.txt`). Under `Record Content`, select `Full Record` to ensure the output contains all metadata, including `Journal Title` (SO), `Citations` (Z9), and other relevant fields.
 
-2. **Filter Articles by Citations**:
-   - Select articles with **Z9 (number of citations) > 20** for higher relevance.
+<!-- 2. **Filter Articles by Citations**:
+   - Select articles with **Z9 (number of citations) > 20** for higher relevance. -->
 
 ---
 
 ### Step 2: Downloading the SJR CSV File
 
-1. Visit the [SJR website](https://www.scimagojr.com/) and download the most recent journal rankings in CSV format.
+Visit the [SJR website](https://www.scimagojr.com/) and download the most recent journal rankings in CSV format.
    - Ensure the CSV file includes columns like `Title`, `SJR`, and `SJR Best Quartile`.
    - Save the file as `sjr_file.csv` in the working directory.
 
-2. Filter for journals ranked **Q1** and **Q2**.
+<!-- 2. Filter for journals ranked **Q1** and **Q2**. -->
 
 ---
 
@@ -43,7 +43,7 @@ This Python script processes exported `.txt` files from Web of Science, cross-ch
    - Load and parse `.txt` files from the specified folder.
    - Validate that the `Z9` (citations) and `Journal` (SO) columns exist.
    - Filter articles based on:
-     - Citation count greater than **20**.
+     - Citation count greater than e.g. **20**.
      - Journals ranked as Q1 or Q2 in the SJR data.
    - Combine the filtered results from all `.txt` files into a single CSV file.
 
